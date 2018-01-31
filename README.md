@@ -20,6 +20,3 @@ Notes for fast.ai's [deep learning course, part 1, 2018 edition](http://course.f
 ## notes
 
 - a good intro video to CNNs: [A friendly introduction to Convolutional Neural Networks and Image Recognition](https://www.youtube.com/watch?v=2-Ol7ZB0MmU)
-  - sub list
-  - true sub list
-- back to original
