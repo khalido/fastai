@@ -1,22 +1,41 @@
 Notes for fast.ai's [deep learning course, part 1, 2018 edition](http://course.fast.ai/).
 
-# Lesson 1: Cats & Dogs
-
-[Lesson 1](http://course.fast.ai/lessons/), [wiki](http://forums.fast.ai/t/wiki-lesson-1/9398)
-
-
-
-## computing setup
-
-- setup a gpu enabled cloud pc on [paperspace](http://paperspace.com/)
-- paperspace is super easy to use and cheaper than Amazon's EC2
-- downside is that the closest paperspace region is far away from me, so I setup a EC2 g2.xlarge instance using Amazon's [Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html). p2.xlarge is newer/faster but was 1.55 vs 0.9.
-
-## Main resources:
-
-- [Reshma has good notes](https://github.com/reshamas/fastai_deeplearn_part1)
+- [Notes for the 2018 course](https://github.com/reshamas/fastai_deeplearn_part1)
 - [fast.ai forums](http://forums.fast.ai/), [Part 1, 2018 forums](http://forums.fast.ai/c/part1-v2)
 
-## notes
+# Lesson 1: Cats & Dogs
 
-- a good intro video to CNNs: [A friendly introduction to Convolutional Neural Networks and Image Recognition](https://www.youtube.com/watch?v=2-Ol7ZB0MmU)
+[Lesson 1](http://course.fast.ai/lessons/lesson1.html), [wiki](http://forums.fast.ai/t/wiki-lesson-1/9398)
+
+- why fast.ai?
+  - fastai is top down, starts with code which does stuff, then slowly peels it back.
+  - recommends getting to the end of all lessons then going through again as many times as needed to spend more time on things missed, rather than going slow.
+  - so first up, setup a gpu machine to run code on:
+
+- [Paperspace](https://github.com/reshamas/fastai_deeplearn_part1/blob/master/tools/paperspace.md)
+- Amazon EC2 - use [AWS Deep Learning AMI (Ubuntu)](https://aws.amazon.com/marketplace/pp/B077GCH38C)
+- [Google Cloud](https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43)
+[](https://github.com/reshamas/fastai_deeplearn_part1)- [Reshma has brilliant setup notes](https://github.com/reshamas/fastai_deeplearn_part1).
+[](https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43)
+
+Once setup, update the OS and fastai repo:
+
+```
+# update the machine OS
+sudo apt update
+sudo apt upgrade
+# make sure the fastai git  repo is up to date
+git pull # run this inside the fastai folder
+conda env update # updates the fastai env
+conda activate fastai # activates fastai env
+```
+
+Use JupyterLab:
+
+`conda install -c conda-forge jupyterlab # install jupyterlab`
+
+
+- first up, we learn how to classify images, with both single and multi-label ones.
+- stochastic gradient descent with restarts (SGDR) lowers the learning rate as the model learns, with periodic ‘jumps’ to ensure it doesn’t get stuck in a local minima
+
+
