@@ -29,7 +29,12 @@ conda env update # updates the fastai env
 conda activate fastai # activates fastai env
 ```
 
-- first up, we learn how to classify images, with both single and multi-label ones.
-- stochastic gradient descent with restarts (SGDR) lowers the learning rate as the model learns, with periodic ‘jumps’ to ensure it doesn’t get stuck in a local minima
+- [Lesson 1: Image classification with Convolutional Neural Networks](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson1.ipynb)
+  - first up, we learn how to classify images, with both single and multi-label ones.
+  - stochastic gradient descent with restarts (SGDR) lowers the learning rate as the model learns, with periodic ‘jumps’ to ensure it doesn’t get stuck in a local minima
+  - the fast.ai library has a `lr.find()` method to help find an optimal learning rate. This starts at a very low lr and keeps increasing it until the loss stops decreasing.
+  - augment data with the `tfms_from_model()` method, with the transformations to perform passed in with `aug_tfms=`
+  - homework: recreate my own versions of the fastai notebooks
+- note: the fastai library is frequently updated so `git pull` it from github instead of installing it using pip. to use the fastai library in my own github repo,create a symlink from the folder containing jupyter notebooks to the library like so `ln -s /path/to/fastai/fastai` and import things as per the fastai notebooks.
 
 
