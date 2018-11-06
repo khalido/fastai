@@ -1,7 +1,16 @@
-Notes for fast.ai's [deep learning course, part 1, 2018 edition](http://course.fast.ai/).
+Notes for fast.ai's [deep learning course, part 1, v3](http://course.fast.ai/), which teaches deep learning using the [fastai library built on top of pytorch](https://www.fast.ai/2018/10/02/fastai-ai/).
 
 - [Notes for the 2018 course](https://github.com/reshamas/fastai_deeplearn_part1)
-- [fast.ai forums](http://forums.fast.ai/), [Part 1, 2018 forums](http://forums.fast.ai/c/part1-v2)
+- [fast.ai forums](http://forums.fast.ai/), [Part 1, v3 forums](http://forums.fast.ai)
+
+# Setup
+
+- I tried [crestle.ai] which is super simple to use, but its slow and buggy for now
+- went with setting up a [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/) server on AWS using their [deep learning ami](https://aws.amazon.com/machine-learning/amis/)
+- make sure to periodically update the fastai libraries
+- login to the server by`ssh -L localhost:8888:localhost:8888 ubuntu@<your instance IP>`
+- make sure the fastai git  repo is up to date
+`git pull # run this inside the fastai course folder`
 
 # Lesson 1: Cats & Dogs
 
@@ -10,24 +19,7 @@ Notes for fast.ai's [deep learning course, part 1, 2018 edition](http://course.f
 - why fast.ai?
   - fastai is top down, starts with code which does stuff, then slowly peels it back.
   - recommends getting to the end of all lessons then going through again as many times as needed to spend more time on things missed, rather than going slow.
-- so first up, setup a gpu machine to run code on
-  - [Paperspace](https://github.com/reshamas/fastai_deeplearn_part1/blob/master/tools/paperspace.md)
-  - Amazon EC2 - use [AWS Deep Learning AMI (Ubuntu)](https://aws.amazon.com/marketplace/pp/B077GCH38C)
-  - [Google Cloud](https://medium.com/@howkhang/ultimate-guide-to-setting-up-a-google-cloud-machine-for-fast-ai-version-2-f374208be43)
 
-Once setup, update the OS and fastai repo:
-
-```
-# update the machine OS
-sudo apt update
-sudo apt upgrade
-conda install -c conda-forge jupyterlab # install jupyterlab
-
-# make sure the fastai git  repo is up to date
-git pull # run this inside the fastai folder
-conda env update # updates the fastai env
-conda activate fastai # activates fastai env
-```
 
 - [Lesson 1: Image classification with Convolutional Neural Networks](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson1.ipynb)
   - first up, we learn how to classify images, with both single and multi-label ones.
